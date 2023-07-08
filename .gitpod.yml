@@ -1,0 +1,8 @@
+tasks:
+  - init: npm i
+    command: npm run start
+    env:
+      WDS_SOCKET_PORT: 0
+ports:
+  - port: 3000
+    onOpen: open-browser
