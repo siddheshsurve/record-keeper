@@ -31,14 +31,16 @@ function App() {
         <Stack spacing={2} direction="row">
           <TextField
             value={form.name}
-            onChange={(event) => setForm({...form, name: event.target.value })}
+            onChange={(event) => setForm({ ...form, name: event.target.value })}
             id="outlined-basic"
             label="Name"
             variant="outlined"
           />
           <TextField
             value={form.email}
-            onChange={(event) => setForm({...form, email: event.target.value })}
+            onChange={(event) =>
+              setForm({ ...form, email: event.target.value })
+            }
             id="outlined-basic"
             label="Email"
             variant="outlined"
