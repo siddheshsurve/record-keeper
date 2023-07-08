@@ -4,32 +4,23 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from '@mui/icons-material/Delete';
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
 
 function App() {
-  const [name, setName] = useState(""); //text
-  const [email, setEmail] = useState(""); //text
+  const [form, setForm] = useState({}); //object state
   const [data, setData] = useState([]); //array{name,email};
 
   const addData = () => {
-    setData([
-      ...data,
-      {
-        //previous array element + new = spread object
-        name: name,
-        email: email,
-      },
-    ]);
-    setName("");
-    setEmail("");
+    setData([...data, form]);
+    setForm(form);
   };
 
   const removeItem = (index) => {
     let arr = data;
-    arr.splice(index, 1)
-    setData([...arr]);    //only new arr values no previous required coz removed
-  }
+    arr.splice(index, 1);
+    setData([...arr]); //only new arr values no previous required coz removed
+  };
 
   return (
     <div className="App">
@@ -39,15 +30,15 @@ function App() {
       <div className="form">
         <Stack spacing={2} direction="row">
           <TextField
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={form.name}
+            onChange={(event) => setForm({...form, name: event.target.value })}
             id="outlined-basic"
             label="Name"
             variant="outlined"
           />
           <TextField
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            value={form.email}
+            onChange={(event) => setForm({...form, email: event.target.value })}
             id="outlined-basic"
             label="Email"
             variant="outlined"
@@ -71,7 +62,11 @@ function App() {
               <h4>{element.name}</h4>
               <h4>{element.email}</h4>
               <Stack>
-                <Button onClick={() => removeItem(index)} variant="contained" color="error">
+                <Button
+                  onClick={() => removeItem(index)}
+                  variant="contained"
+                  color="error"
+                >
                   <DeleteIcon />
                 </Button>
               </Stack>
