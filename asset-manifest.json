@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/record-keeper/static/css/main.148a19e5.css",
+    "main.js": "/record-keeper/static/js/main.e438ba3e.js",
+    "static/js/787.5bb83086.chunk.js": "/record-keeper/static/js/787.5bb83086.chunk.js",
+    "index.html": "/record-keeper/index.html",
+    "main.148a19e5.css.map": "/record-keeper/static/css/main.148a19e5.css.map",
+    "main.e438ba3e.js.map": "/record-keeper/static/js/main.e438ba3e.js.map",
+    "787.5bb83086.chunk.js.map": "/record-keeper/static/js/787.5bb83086.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.148a19e5.css",
+    "static/js/main.e438ba3e.js"
+  ]
+}
